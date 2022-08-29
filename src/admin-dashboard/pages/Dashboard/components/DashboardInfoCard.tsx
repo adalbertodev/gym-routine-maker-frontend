@@ -46,7 +46,7 @@ export const DashboardInfoCard: FC<Props> = ({ CardIcon, iconColor, percentage, 
           </Box>
         </Box>
 
-        <DashboardCardIcon color={iconColor} ShowIcon={CardIcon} />
+        <DashboardCardIcon backgroundColor={iconColor} ShowIcon={CardIcon} />
       </DashboardInfoCardBox>
     </DashboardCard>
   );

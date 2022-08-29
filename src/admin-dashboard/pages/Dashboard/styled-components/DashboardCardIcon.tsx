@@ -1,28 +1,25 @@
-import { FC } from 'react';
-import { SvgIconTypeMap } from '@mui/material';
+import { IconProps, styled, SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 import { DashboardIcon } from './DashboardIcon';
 
-interface Props {
+interface Props extends IconProps {
   ShowIcon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
 
-  color?: string;
+  backgroundColor?: string;
 }
 
-export const DashboardCardIcon: FC<Props> = ({ color, ShowIcon }) => {
-  return (
-    <DashboardIcon
-      sx={{
-        backgroundColor: color || 'primary.main',
-        borderRadius: '50%',
-        color: ({ palette }) => palette.backgroundColor.light,
-        fontSize: '3.5rem',
-        justifyContent: 'center',
-        marginBottom: '0.5rem'
-      }}
-    >
-      <ShowIcon sx={{ fontSize: '1.8rem' }} />
-    </DashboardIcon>
-  );
-};
+const Composition = ({ ShowIcon, backgroundColor, ...props }: Props) => (
+  <DashboardIcon {...props}>
+    <ShowIcon />
+  </DashboardIcon>
+);
+
+export const DashboardCardIcon = styled(Composition)(({ backgroundColor, theme }) => ({
+  backgroundColor: backgroundColor || theme.palette.primary.main,
+  borderRadius: '50%',
+  color: theme.palette.backgroundColor.light,
+  fontSize: '3.5rem',
+  justifyContent: 'center',
+  marginBottom: '0.5rem'
+}));
