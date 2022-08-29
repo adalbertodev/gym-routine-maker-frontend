@@ -4,7 +4,8 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-import { DashboardCard, DashboardCardIcon, DashboardIcon, DashboardInfoCardBox } from '../styled-components';
+import { AdminCard } from '../../../styled-components';
+import { DashboardCardIcon, DashboardIcon, DashboardInfoCardBox } from '../styled-components';
 
 interface Props {
   CardIcon: OverridableComponent<SvgIconTypeMap<{}, 'svg'>>;
@@ -20,7 +21,7 @@ export const DashboardInfoCard: FC<Props> = ({ CardIcon, iconColor, percentage, 
   const PercentageIcon = isPositive ? KeyboardArrowUpIcon : KeyboardArrowDownIcon;
 
   return (
-    <DashboardCard>
+    <AdminCard>
       <DashboardInfoCardBox>
         <Box className='info-card-content'>
           <Box>
@@ -48,6 +49,6 @@ export const DashboardInfoCard: FC<Props> = ({ CardIcon, iconColor, percentage, 
 
         <DashboardCardIcon backgroundColor={iconColor} ShowIcon={CardIcon} />
       </DashboardInfoCardBox>
-    </DashboardCard>
+    </AdminCard>
   );
 };

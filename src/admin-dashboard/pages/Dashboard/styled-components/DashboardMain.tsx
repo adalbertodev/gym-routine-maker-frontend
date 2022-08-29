@@ -4,7 +4,7 @@ export const DashboardMain = styled(Box)(({ theme }) => ({
   display: 'grid',
   rowGap: '3rem',
   gridTemplateRows: '12rem auto',
-  marginTop: '4.5rem',
+  marginTop: 'var(--appbar-height)',
   paddingTop: '2rem',
 
   '& .info-section': {

@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
 
-import { DashboardTableContainer, DashboardCard } from '../styled-components';
+import { AdminCard } from '../../../styled-components';
+import { DashboardTableContainer } from '../styled-components';
 import { UpdateTableRow } from './UpdateTableRow';
 
 const createData = (name: string, type: string, section: string, sectionName: string, details: string) => {
@@ -19,7 +20,7 @@ interface Props {}
 
 export const UpdateTable: FC<Props> = () => {
   return (
-    <DashboardCard className='updates-table'>
+    <AdminCard className='updates-table'>
       <DashboardTableContainer>
         <Box className='table-header'>
           <Typography variant='h2' component='h2'>
@@ -47,6 +48,6 @@ export const UpdateTable: FC<Props> = () => {
           </TableBody>
         </Table>
       </DashboardTableContainer>
-    </DashboardCard>
+    </AdminCard>
   );
 };
