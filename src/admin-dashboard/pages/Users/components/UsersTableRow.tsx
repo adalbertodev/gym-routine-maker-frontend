@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { TableRow, TableCell } from '@mui/material';
+import { TableRow, TableCell, Button } from '@mui/material';
 
 import { TableUser } from '../models/TableUser';
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const UsersTableRow: FC<Props> = ({ data }) => {
-  const { id, name, email, role, action } = data;
+  const { id, name, email, role } = data;
 
   return (
     <TableRow>
@@ -18,7 +18,11 @@ export const UsersTableRow: FC<Props> = ({ data }) => {
       <TableCell className='table-name'>{name}</TableCell>
       <TableCell className='table-email'>{email}</TableCell>
       <TableCell className='table-role'>{role}</TableCell>
-      <TableCell className='table-action'>{action}</TableCell>
+      <TableCell className='table-edit'>
+        <Button color='primary' variant='outlined' size='small'>
+          Edit
+        </Button>
+      </TableCell>
     </TableRow>
   );
 };

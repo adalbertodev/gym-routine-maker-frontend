@@ -3,11 +3,23 @@ import { styled, TableContainer } from '@mui/material';
 export const UsersTableContainer = styled(TableContainer)(({ theme }) => ({
   backgroundColor: 'transparent',
   display: 'grid',
-  gridTemplateRows: '3.5rem auto',
+  gridTemplateRows: 'repeat(2, auto)',
+  rowGap: '1rem',
 
   '& .table-header': {
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: 'fit-content',
+
+    '& button': {
+      backgroundColor: theme.palette.success.main,
+      color: theme.palette.backgroundColor.light,
+
+      '&:hover': {
+        backgroundColor: theme.palette.success.dark
+      }
+    }
   },
 
   '& .MuiTableCell-head': {
@@ -20,23 +32,23 @@ export const UsersTableContainer = styled(TableContainer)(({ theme }) => ({
   '& .MuiTableCell-body': {
     borderBottom: `1px solid ${theme.palette.backgroundColor.main}`,
     color: theme.palette.text.secondary,
-    height: '2.8rem',
+    height: '3.6rem',
     padding: '0.5rem'
   },
 
   '& .table-id': {
-    width: '15%'
+    width: '24%'
   },
   '& .table-name': {
-    width: '27%'
+    width: '25%'
   },
   '& .table-email': {
-    width: '27%'
+    width: '25%'
   },
   '& .table-role': {
     width: '10%'
   },
-  '& .table-action': {
-    width: '21%'
+  '& .table-edit': {
+    width: '16%'
   }
 })) as typeof TableContainer;

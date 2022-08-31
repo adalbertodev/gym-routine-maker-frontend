@@ -18,7 +18,8 @@ export const adminDarkTheme: Theme = createTheme({
       contrastText: '#fffffe'
     },
     success: {
-      main: '#2cb67d'
+      main: '#2cb67d',
+      dark: '#21885D'
     },
     danger: {
       main: '#B62C7D'
@@ -119,6 +120,23 @@ export const adminDarkTheme: Theme = createTheme({
       defaultProps: {
         sx: {
           color: 'text.primary'
+        }
+      }
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'outlined' },
+          style: {
+            textTransform: 'uppercase'
+          }
+        }
+      ]
+    },
+    MuiSvgIcon: {
+      defaultProps: {
+        sx: {
+          fontSize: 'inherit'
         }
       }
     }

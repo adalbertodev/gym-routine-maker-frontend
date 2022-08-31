@@ -3,5 +3,4 @@ export interface TableUser {
   name: string;
   email: string;
   role: string;
-  action: string;
 }
