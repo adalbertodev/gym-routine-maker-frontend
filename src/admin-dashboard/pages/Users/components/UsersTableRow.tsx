@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { TableRow, TableCell } from '@mui/material';
 
-import { UserData } from '../models/UserData';
+import { TableUser } from '../models/TableUser';
 
 interface Props {
-  data: UserData;
+  data: TableUser;
 }
 
 export const UsersTableRow: FC<Props> = ({ data }) => {
