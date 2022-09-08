@@ -7,9 +7,13 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "noImplicitAny": true,
     "noImplicitThis": true,
     "resolveJsonModule": true,
