@@ -36,7 +36,7 @@ export const UserPage: FC = () => {
   return !data ? (
     <LoadingView />
   ) : (
-    <UserContainer>
+    <UserContainer sx={{ maxHeight: 'calc(100vh - 4rem - var(--appbar-height))' }}>
       <AdminCard className='card'>
         <ProfileTabs onChange={onTabChange} value={value}>
           <ProfileTab label='Account' icon={<PersonIcon />} index={0} />

@@ -2,17 +2,17 @@ import { useCallback, useMemo, useState } from 'react';
 
 interface Options {
   elements: number;
-  perPage: number;
+  pageSize: number;
 }
 
 const defaultOptions: Options = {
   elements: 0,
-  perPage: 10
+  pageSize: 10
 };
 
-export const usePagination = ({ perPage, elements }: Options = defaultOptions) => {
+export const usePagination = ({ pageSize, elements }: Options = defaultOptions) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const maxPage = useMemo(() => Math.ceil(elements / perPage), [elements]);
+  const maxPage = useMemo(() => Math.ceil(elements / pageSize), [elements]);
 
   const nextPage = useCallback(() => {
     setCurrentPage(currentPage => (currentPage >= maxPage ? currentPage : currentPage + 1));
@@ -25,7 +25,7 @@ export const usePagination = ({ perPage, elements }: Options = defaultOptions) =
   return {
     currentPage,
     maxPage,
-    perPage,
+    pageSize,
 
     nextPage,
     prevPage

@@ -13,8 +13,8 @@ import { UsersTableRow } from './UsersTableRow';
 export const UsersTable: FC = () => {
   const { data, getUsers } = useUserAPI();
   const [users, setUsers] = useState<TableUser[]>([]);
-  const { currentPage, maxPage, perPage, nextPage, prevPage } = usePagination({
-    perPage: 9,
+  const { currentPage, maxPage, pageSize, nextPage, prevPage } = usePagination({
+    pageSize: 9,
     elements: users.length
   });
 
@@ -54,7 +54,7 @@ export const UsersTable: FC = () => {
 
           <TableBody>
             {users
-              .filter((_user, index) => index < perPage * currentPage && index >= perPage * (currentPage - 1))
+              .filter((_user, index) => index < pageSize * currentPage && index >= pageSize * (currentPage - 1))
               .map((user, i) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <UsersTableRow data={user} key={user.id + i} />
@@ -63,7 +63,7 @@ export const UsersTable: FC = () => {
         </Table>
       </UsersTableContainer>
 
-      {users.length > perPage && (
+      {users.length > pageSize && (
         <Pagination currentPage={currentPage} maxPage={maxPage} nextPage={nextPage} prevPage={prevPage} />
       )}
     </AdminCard>

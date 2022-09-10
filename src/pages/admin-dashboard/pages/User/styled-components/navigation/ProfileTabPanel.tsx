@@ -13,13 +13,14 @@ interface BoxType extends BoxTypeMap {
 
 const Composition = ({ children, index, value, sx, ...props }: Props) => (
   <Box
-    role="tabpanel"
+    role='tabpanel'
     hidden={value !== index}
     id={`full-width-tabpanel-${index}`}
     aria-labelledby={`full-width-tab-${index}`}
     sx={{
       height: '100%',
-      ...sx,
+      maxHeight: 'calc(100% - 65px)',
+      ...sx
     }}
     {...props}
   >
@@ -28,5 +29,5 @@ const Composition = ({ children, index, value, sx, ...props }: Props) => (
 );
 
 export const ProfileTabPanel = styled(Composition)({
-  padding: '1.8rem',
+  padding: '2rem 1.8rem'
 }) as OverridableComponent<BoxType>;
